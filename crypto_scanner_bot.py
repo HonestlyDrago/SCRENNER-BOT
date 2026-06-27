@@ -7,7 +7,7 @@ import requests
 # ==========================================
 # CONFIGURATION
 # ==========================================
-EXCHANGE_NAME = 'mexc'  # MEXC bypasses geo-blocks
+EXCHANGE_NAME = 'binance'  # Set to Binance as requested
 TIMEFRAME = '1h'
 VOL_SMA_LEN = 50
 VOL_MULTIPLIER = 5.0
