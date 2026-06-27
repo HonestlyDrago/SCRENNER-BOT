@@ -32,7 +32,7 @@ threading.Thread(target=run_dummy_server, daemon=True).start()
 # ==========================================
 # CONFIGURATION
 # ==========================================
-EXCHANGE_NAME = 'binance'  # e.g., 'binance', 'bybit', 'kucoin'
+EXCHANGE_NAME = 'mexc'  # Changed to MEXC to bypass US IP blocks on Hugging Face
 TIMEFRAME = '1h'           # Chart timeframe (e.g., '15m', '1h', '4h')
 VOL_SMA_LEN = 50           # Volume Moving Average Length
 VOL_MULTIPLIER = 5.0       # How many times larger the volume needs to be
