@@ -22,7 +22,7 @@ class DummyHandler(BaseHTTPRequestHandler):
         self.wfile.write(b"Bot is running!")
 
 def run_dummy_server():
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get("PORT", 7860))
     server = HTTPServer(('0.0.0.0', port), DummyHandler)
     print(f"🌐 Starting dummy web server on port {port}...")
     server.serve_forever()
