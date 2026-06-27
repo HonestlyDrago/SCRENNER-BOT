@@ -1,9 +1,4 @@
 import os
-import certifi
-os.environ['REQUESTS_CA_BUNDLE'] = certifi.where()
-os.environ['CURL_CA_BUNDLE'] = certifi.where()
-os.environ['SSL_CERT_FILE'] = certifi.where()
-
 import ccxt
 import pandas as pd
 import time
@@ -58,8 +53,11 @@ def send_telegram_alert(message):
         'text': message, 
         'parse_mode': 'HTML'
     }
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    }
     try:
-        response = requests.post(url, json=payload)
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
         response.raise_for_status()
     except Exception as e:
         print(f"Failed to send Telegram message: {e}")
